@@ -1,0 +1,174 @@
+CREATE DATABASE VOES;
+
+CREATE TABLE [dbo].[applications] (
+    [serial]    INT           IDENTITY (1, 1) NOT NULL,
+    [subject]   VARCHAR (150) NOT NULL,
+    [body]      TEXT          NOT NULL,
+    [sendedby]  VARCHAR (50)  NOT NULL,
+    [senddate]  DATETIME      NOT NULL,
+    [reply]     TEXT          NULL,
+    [repliedby] VARCHAR (50)  NULL,
+    [replydate] DATETIME      NULL
+);
+
+GO
+CREATE TABLE [dbo].[availability] (
+    [id]       VARCHAR (50) NULL,
+    [from_sat] VARCHAR (50) NULL,
+    [to_sat]   VARCHAR (50) NULL,
+    [from_sun] VARCHAR (50) NULL,
+    [to_sun]   VARCHAR (50) NULL,
+    [from_mon] VARCHAR (50) NULL,
+    [to_mon]   VARCHAR (50) NULL,
+    [from_tue] VARCHAR (50) NULL,
+    [to_tue]   VARCHAR (50) NULL,
+    [from_wed] VARCHAR (50) NULL,
+    [to_wed]   VARCHAR (50) NULL,
+    [from_thu] VARCHAR (50) NULL,
+    [to_thu]   VARCHAR (50) NULL,
+    [from_fri] VARCHAR (50) NULL,
+    [to_fri]   VARCHAR (50) NULL
+);
+
+GO
+CREATE TABLE [dbo].[event_expense_log] (
+    [event_name] VARCHAR (100)   NOT NULL,
+    [amount]     DECIMAL (15, 2) NOT NULL,
+    [sector]     VARCHAR (100)   NOT NULL,
+    [date]       DATETIME        NULL,
+    [addedby]    VARCHAR (50)    NOT NULL
+);
+
+GO
+CREATE TABLE [dbo].[event_funding_log] (
+    [event_name] VARCHAR (100)   NOT NULL,
+    [amount]     DECIMAL (15, 2) NOT NULL,
+    [sector]     VARCHAR (100)   NULL,
+    [date]       DATETIME        NOT NULL,
+    [addedby]    VARCHAR (50)    NOT NULL
+);
+
+GO
+CREATE TABLE [dbo].[events] (
+    [serial]       INT           IDENTITY (1, 1) NOT NULL,
+    [event_name]   VARCHAR (100) NOT NULL,
+    [picture]      IMAGE         NOT NULL,
+    [start_date]   VARCHAR (50)  NOT NULL,
+    [end_date]     VARCHAR (50)  NULL,
+    [description]  TEXT          NOT NULL,
+    [location]     VARCHAR (100) NOT NULL,
+    [status]       VARCHAR (50)  NULL,
+    [addedby]      VARCHAR (50)  NOT NULL,
+    [additiondate] DATETIME      NOT NULL
+);
+
+GO
+CREATE TABLE [dbo].[events_data] (
+    [serial]          INT           IDENTITY (1, 1) NOT NULL,
+    [event_name]      VARCHAR (100) NOT NULL,
+    [total_expense]   DECIMAL (15)  NULL,
+    [total_fund]      DECIMAL (15)  NULL,
+    [committee]       TEXT          NULL,
+    [activity_report] TEXT          NULL
+);
+
+GO
+CREATE TABLE [dbo].[external_donation_log] (
+    [serial]     INT             IDENTITY (1, 1) NOT NULL,
+    [donor_name] VARCHAR (50)    NOT NULL,
+    [phone]      VARCHAR (20)    NULL,
+    [email]      VARCHAR (150)   NULL,
+    [amount]     DECIMAL (15, 2) NOT NULL,
+    [company]    VARCHAR (150)   NULL,
+    [comment]    TEXT            NULL,
+    [date]       DATETIME        NOT NULL,
+    [recievedby] VARCHAR (50)    NOT NULL
+);
+
+GO
+CREATE TABLE [dbo].[internal_donation_log] (
+    [serial]         INT             IDENTITY (1, 1) NOT NULL,
+    [members_id]     VARCHAR (50)    NOT NULL,
+    [payment]        DECIMAL (15, 2) NOT NULL,
+    [selected_month] VARCHAR (50)    NOT NULL,
+    [pre_balance]    DECIMAL (15, 2) NULL,
+    [curr_balance]   DECIMAL (15, 2) NOT NULL,
+    [payment_date]   DATETIME        NOT NULL,
+    [recieved_by]    VARCHAR (50)    NOT NULL
+);
+
+GO
+CREATE TABLE [dbo].[members] (
+    [serial]       INT           IDENTITY (1, 1) NOT NULL,
+    [id]           VARCHAR (50)  NOT NULL,
+    [name]         VARCHAR (100) NOT NULL,
+    [phone]        VARCHAR (16)  NOT NULL,
+    [email]        VARCHAR (100) NOT NULL,
+    [designation]  VARCHAR (100) NOT NULL,
+    [address]      TEXT          NULL,
+    [dob]          VARCHAR (50)  NULL,
+    [bloodgroup]   VARCHAR (20)  NULL,
+    [usertype]     VARCHAR (50)  NOT NULL,
+    [username]     VARCHAR (100) NOT NULL,
+    [pass]         VARCHAR (100) NOT NULL,
+    [image]        IMAGE         NULL,
+    [addedby]      VARCHAR (50)  NOT NULL,
+    [additiondate] DATETIME      NOT NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+GO
+CREATE TABLE [dbo].[members_financial_info] (
+    [serial]        INT             IDENTITY (1, 1) NOT NULL,
+    [members_id]    VARCHAR (50)    NOT NULL,
+    [starting_date] VARCHAR (50)    NULL,
+    [balance]       DECIMAL (15, 2) NOT NULL
+);
+
+GO
+CREATE TABLE [dbo].[notices] (
+    [serial]   INT           IDENTITY (1, 1) NOT NULL,
+    [subject]  VARCHAR (100) NOT NULL,
+    [body]     TEXT          NOT NULL,
+    [postedby] VARCHAR (50)  NOT NULL,
+    [postdate] DATETIME      NOT NULL
+);
+
+GO
+CREATE TABLE [dbo].[system_administrator] (
+    [name]             VARCHAR (50) NULL,
+    [private_property] VARCHAR (50) NULL,
+    [nid_no]           VARCHAR (50) NULL
+);
+
+GO
+ALTER TABLE [dbo].[events_data]
+    ADD CONSTRAINT [DF_events_data_total_expense] DEFAULT ((0.00)) FOR [total_expense];
+
+GO
+ALTER TABLE [dbo].[events_data]
+    ADD CONSTRAINT [DF_events_data_total_fund] DEFAULT ((0.00)) FOR [total_fund];
+
+GO
+ALTER TABLE [dbo].[internal_donation_log]
+    ADD CONSTRAINT [DF_internal_donation_log_curr_balance] DEFAULT ((0.00)) FOR [curr_balance];
+
+GO
+ALTER TABLE [dbo].[internal_donation_log]
+    ADD CONSTRAINT [DF_internal_donation_log_pre_balance] DEFAULT ((0.00)) FOR [pre_balance];
+
+GO
+ALTER TABLE [dbo].[members_financial_info]
+    ADD CONSTRAINT [DF_members_financial_info_balance] DEFAULT ((0.00)) FOR [balance];
+
+GO
+ALTER TABLE [dbo].[applications]
+    ADD CONSTRAINT [PK_applications] PRIMARY KEY CLUSTERED ([serial] ASC);
+
+GO
+ALTER TABLE [dbo].[members]
+    ADD CONSTRAINT [uni_username] UNIQUE NONCLUSTERED ([username] ASC);
+
+GO
+
+INSERT INTO [dbo].[system_administrator] ([name],[private_property],[nid_no]) VALUES('ADMIN', 'admin', 'voes_admin');

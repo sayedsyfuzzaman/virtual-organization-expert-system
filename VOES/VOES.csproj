@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6CE0360-D4AB-4A9F-A057-CE070A443F62}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VOES</RootNamespace>
+    <AssemblyName>VOES</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8_programming_flag_4.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>C:\Users\User\Downloads\Compressed\Tech4Each-20210409T153429Z-001\Tech4Each\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\Event.cs" />
+    <Compile Include="Controllers\Member.cs" />
+    <Compile Include="Controllers\Notice.cs" />
+    <Compile Include="Report\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\EventReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\EventReport.Designer.cs">
+      <DependentUpon>EventReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\AllEvents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\AllEvents.Designer.cs">
+      <DependentUpon>AllEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\events.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\events.Designer.cs">
+      <DependentUpon>events.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\AddMembers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\AddMembers.Designer.cs">
+      <DependentUpon>AddMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\AllMembers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\AllMembers.Designer.cs">
+      <DependentUpon>AllMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\AvailableVolunteer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\AvailableVolunteer.Designer.cs">
+      <DependentUpon>AvailableVolunteer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\CreateEvents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\CreateEvents.Designer.cs">
+      <DependentUpon>CreateEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\CreateNotice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\CreateNotice.Designer.cs">
+      <DependentUpon>CreateNotice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\event_history.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\event_history.Designer.cs">
+      <DependentUpon>event_history.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\ExternalDonationsFront.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\ExternalDonationsFront.Designer.cs">
+      <DependentUpon>ExternalDonationsFront.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\financials.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\financials.Designer.cs">
+      <DependentUpon>financials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\HomeExecutive.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\HomeExecutive.Designer.cs">
+      <DependentUpon>HomeExecutive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\InternalDonationFront.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\InternalDonationFront.Designer.cs">
+      <DependentUpon>InternalDonationFront.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\InternalDonationLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\InternalDonationLog.Designer.cs">
+      <DependentUpon>InternalDonationLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\ManageEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\ManageEvent.Designer.cs">
+      <DependentUpon>ManageEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\Members.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\Members.Designer.cs">
+      <DependentUpon>Members.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\Donation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\Donation.Designer.cs">
+      <DependentUpon>Donation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\ExecutiveMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\ExecutiveMenu.Designer.cs">
+      <DependentUpon>ExecutiveMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\ManageApplication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\ManageApplication.Designer.cs">
+      <DependentUpon>ManageApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\NoticePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\NoticePanel.Designer.cs">
+      <DependentUpon>NoticePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\Notices.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\Notices.Designer.cs">
+      <DependentUpon>Notices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\SelectedMemberDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\ExecutiveControls\SelectedMemberDetails.Designer.cs">
+      <DependentUpon>SelectedMemberDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User Interface\SysLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\SysLogin.Designer.cs">
+      <DependentUpon>SysLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\SystemAdministrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\SystemAdministrator.Designer.cs">
+      <DependentUpon>SystemAdministrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\AllApplications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\AllApplications.Designer.cs">
+      <DependentUpon>AllApplications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\Applications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\Applications.Designer.cs">
+      <DependentUpon>Applications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\EventsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\EventsPanel.Designer.cs">
+      <DependentUpon>EventsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\FreeTimeUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\FreeTimeUpdate.Designer.cs">
+      <DependentUpon>FreeTimeUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\NoticeSection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\NoticeSection.Designer.cs">
+      <DependentUpon>NoticeSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\SendApplication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\SendApplication.Designer.cs">
+      <DependentUpon>SendApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\VolunteerMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Interface\VolunteerControls\VolunteerMenu.Designer.cs">
+      <DependentUpon>VolunteerMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Validation.cs" />
+    <EmbeddedResource Include="Report\EventReport.resx">
+      <DependentUpon>EventReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Report1.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\AllEvents.resx">
+      <DependentUpon>AllEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\events.resx">
+      <DependentUpon>events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\AddMembers.resx">
+      <DependentUpon>AddMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\AllMembers.resx">
+      <DependentUpon>AllMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\AvailableVolunteer.resx">
+      <DependentUpon>AvailableVolunteer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\CreateEvents.resx">
+      <DependentUpon>CreateEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\CreateNotice.resx">
+      <DependentUpon>CreateNotice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\event_history.resx">
+      <DependentUpon>event_history.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\ExternalDonationsFront.resx">
+      <DependentUpon>ExternalDonationsFront.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\financials.resx">
+      <DependentUpon>financials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\HomeExecutive.resx">
+      <DependentUpon>HomeExecutive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\InternalDonationFront.resx">
+      <DependentUpon>InternalDonationFront.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\InternalDonationLog.resx">
+      <DependentUpon>InternalDonationLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\ManageEvent.resx">
+      <DependentUpon>ManageEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\Members.resx">
+      <DependentUpon>Members.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\Donation.resx">
+      <DependentUpon>Donation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\ExecutiveMenu.resx">
+      <DependentUpon>ExecutiveMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\ManageApplication.resx">
+      <DependentUpon>ManageApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\NoticePanel.resx">
+      <DependentUpon>NoticePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\Notices.resx">
+      <DependentUpon>Notices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\ExecutiveControls\SelectedMemberDetails.resx">
+      <DependentUpon>SelectedMemberDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="User Interface\SysLogin.resx">
+      <DependentUpon>SysLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\SystemAdministrator.resx">
+      <DependentUpon>SystemAdministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\VolunteerControls\AllApplications.resx">
+      <DependentUpon>AllApplications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\VolunteerControls\Applications.resx">
+      <DependentUpon>Applications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\VolunteerControls\EventsPanel.resx">
+      <DependentUpon>EventsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\VolunteerControls\FreeTimeUpdate.resx">
+      <DependentUpon>FreeTimeUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\VolunteerControls\NoticeSection.resx">
+      <DependentUpon>NoticeSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\VolunteerControls\SendApplication.resx">
+      <DependentUpon>SendApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\VolunteerControls\VolunteerMenu.resx">
+      <DependentUpon>VolunteerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Report\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correct_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usergroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show_password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\username.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send_application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_window.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_window.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_next_page.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\balance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\member.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\member1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\event1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\event2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\event3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\balance1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\balance2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\developer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\software_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8_programming_flag_4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
